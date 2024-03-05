@@ -1,4 +1,4 @@
-let randomnumber=Math.floor((Math.random()*100)+1);
+let myrandomnumber=Math.floor((Math.random()*100)+1);
  const guessfield=document.querySelector(".guessfield");
  const submitguess=document.querySelector(".submitguess");
  const loworhi=document.querySelector(".loworhi");
@@ -29,7 +29,7 @@ let randomnumber=Math.floor((Math.random()*100)+1);
     else{
         stack.push(text);
         if(remaining===11){
-            loworhi.innerHTML=`sorry next time and guesses number is ${randomnumber}`
+            loworhi.innerHTML=`sorry next time and guesses number is ${myrandomnumber}`
             endgame()
         }
         else{
@@ -42,14 +42,14 @@ let randomnumber=Math.floor((Math.random()*100)+1);
  }
   function checkguess(text){
     guessfield.value="";
- if(text=== randomnumber){
+ if(text=== myrandomnumber){
     loworhi.innerHTML=`yeah you guess right in your ${remaining-1} attempts `
     endgame();
  }
- else if(text<randomnumber){
+ else if(text<myrandomnumber){
     loworhi.innerHTML="you are Tooo low"
  }
- else if(text>randomnumber){
+ else if(text>myrandomnumber){
     loworhi.innerHTML="you are Tooo high"
  }
   }
@@ -66,7 +66,7 @@ let randomnumber=Math.floor((Math.random()*100)+1);
  function startgame(){
     const startgame=document.querySelector('#newgame')
     startgame.addEventListener('click',function(e){
-     randomnumber=Math.floor((Math.random()*100)+1);
+     myrandomnumber=Math.floor((Math.random()*100)+1);
      remaining=1;
      stack=[];
      lastresult.innerHTML=(`${11-remaining}`)
